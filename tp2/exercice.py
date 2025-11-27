@@ -6,12 +6,13 @@ df = pd.read_csv("tp2/prets.csv")
 print(df.columns)
 print(df.shape)
 
-# 3
 nb_villes = df['ville'].nunique()
 print("Nombre de villes uniques :", nb_villes)
 
-# 4
+# 3
 df["taux_endettement"] = (df["remboursement"] * 100 / df["revenu"]).round(2)
+
+# 4
 df.rename({"taux": "taux_interet"}, axis=1, inplace=True)
 print(df.head())
 
